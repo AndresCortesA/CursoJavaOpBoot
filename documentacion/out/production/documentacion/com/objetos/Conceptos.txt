@@ -1,0 +1,22 @@
+clases abstractas
+    -Es un tipo de clase que no se puede instanciar la utilizamos en herencia normalmente
+
+Tema interfaces
+Las interfaces sirven para implementar objetos de manera hagil, sirve mucho para data cience y base de datos
+por lo tanto se utilizan para crear obtejos que sean reutilizables sin repetir codigo
+    -Es un mecanismo de abstraccion que nos permite desacoplar el codigo haciendolo más flexible
+
+
+@override sirve para sobreescribir
+
+Tecnicas de refactoring
+Consiste en crear un codigo para ser mucho más legible y que se pueda mantener mejor a corto y largo plazo esto
+nos permite crear software de mayor cálidad
+
+el toString nos facilita sacar losdatos guardados de una clase para observar realmente su contenido y no su direccion
+en memoria
+
+
+MAPS
+un Maps en java nos permite generar una estructura de datos que guarda elementos en pares clases es decir clave/valor
+ejemplo ["clave":"valor"]->["nombre":"Juan"]
