@@ -1,3 +1,7 @@
+import java.io.FileInputStream;
+import java.io.IOException;
+import java.io.InputStream;
+import java.io.PrintStream;
 import java.util.ArrayList;
 import java.util.LinkedList;
 import java.util.Vector;
@@ -14,7 +18,25 @@ public class Main {
     private static int  Divide(int dividend, int divisor) throws ArithmeticException{
         return dividend/divisor;
     }
-    public static void main(String[] args) {
+    //metodo que me ayude a imprimir un intupStrea y printStream
+    private static boolean realizaCopia(String fileIn, String fileOut) throws IOException {
+        try {
+            InputStream entrada = new FileInputStream(fileIn);
+            byte[] datos = entrada.readAllBytes();
+            entrada.close();
+
+            PrintStream salida = new PrintStream(fileOut);
+            salida.write(datos);
+            salida.close();
+
+        }catch(IOException e){
+            System.out.println("Hay un problema " + e.getMessage());
+        }finally {
+            System.out.println("Final");
+        }
+        return false;
+    }
+    public static void main(String[] args) throws IOException {
         System.out.println("/--------------------- cadena al reves-----------------------------------/");
         System.out.println(reverse("Hola Mundo"));
         System.out.println("/--------------------- Array unidimensional-----------------------------------/");
@@ -94,7 +116,10 @@ public class Main {
         }finally {
             System.out.println("Final");
         }
-
+        System.out.println("/---------------------InputStream y PrintStream-----------------------------------/");
+        System.out.println(realizaCopia("Ejemplo1", "Ejemplo1"));
     }
+
+
 
 }
