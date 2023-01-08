@@ -3,11 +3,16 @@ import java.util.LinkedList;
 import java.util.Vector;
 
 public class Main {
+
     //imprime una cadena al reves
     public static String reverse(String texto) {
         StringBuilder revers = new StringBuilder(texto);
         texto = revers.reverse().toString();
         return texto;
+    }
+    //metodo para dividir por cero
+    private static int  Divide(int dividend, int divisor) throws ArithmeticException{
+        return dividend/divisor;
     }
     public static void main(String[] args) {
         System.out.println("/--------------------- cadena al reves-----------------------------------/");
@@ -32,7 +37,7 @@ public class Main {
         }
         System.out.println("/---------------------Vector-----------------------------------/");
 
-        Vector<Integer> enteros = new Vector<Integer>();
+        Vector<Integer> enteros = new Vector<>();
 
         enteros.add(1);
         enteros.add(2);
@@ -49,7 +54,7 @@ public class Main {
         System.out.println("cada vez que se ejecute el vector se duplica al desbordar hace que no sea eficiente");
 
         System.out.println("/--------------------arrayList_LinkedList-----------------------------------/");
-        ArrayList<String> arrayList = new ArrayList<String >();
+        ArrayList<String> arrayList = new ArrayList<>();
         arrayList.add("Pepito");
         arrayList.add("Perez");
         arrayList.add("Tolomea");
@@ -63,10 +68,33 @@ public class Main {
             esta es buena option pero se utiliza mucho codigo, es mejor asignarle el arreglo directamente
             es casi lo mismo y más eficiente
         }*/
-        LinkedList<String> linkedList = new LinkedList<String>(arrayList);
+        LinkedList<String> linkedList = new LinkedList<>(arrayList);
         for (String linked : linkedList) {
             System.out.println("Elementos de LinkedList: " + linked);
         }
+        System.out.println("-------------------Arreglo en menos de dos pasos-----------------------");
+        /*Crea un ArrayList de tipo int, y, utilizando un bucle rellénalo con elementos 1..10. A continuación,
+         con otro bucle, recórrelo y elimina los numeros pares.
+         Por último, vuelve a recorrerlo y muestra el ArrayList final.
+        Si te atreves, puedes hacerlo en menos pasos, siempre y cuando cumplas el primer "for" de relleno.*/
+        ArrayList<Integer> numeritos = new ArrayList<>();
+        for (int i = 0; i < 10; i++) {
+            if(i%2 != 0) {
+                numeritos.add(i);
+            }
+        }
+        System.out.println(numeritos);
+
+        System.out.println("-------------------Try catch-----------------------");
+
+        try {
+            System.out.println(Divide(1, 0));
+        }catch (ArithmeticException e){
+            System.out.println("Este proceso no es permitido: " + e.toString());
+        }finally {
+            System.out.println("Final");
+        }
 
     }
+
 }
