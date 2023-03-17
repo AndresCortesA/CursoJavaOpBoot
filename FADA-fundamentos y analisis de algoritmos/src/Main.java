@@ -1,5 +1,7 @@
 
 
+
+
 public class Main {
 
     public static boolean existePalindromo(String oracion) {
@@ -29,6 +31,13 @@ public class Main {
         return suma;
     }
 
+    public static long sol_sum(long n){
+        long x = (n*n*(n*n+1)/2 - 780);
+        long  parte1 = -40*41+2*n*(2*n + 1);
+        long  parte2 = 8*(2*n + 41);
+        return x *(parte1 + parte2);
+    }
+
 
 
     public static void main(String[] args) {
@@ -55,7 +64,7 @@ public class Main {
         System.out.println("************************************************* sumatoria");
 
         for(long valor:arreglo){
-            System.out.println(f_sum(valor));
+            System.out.println(valor+" "+f_sum(valor)+" "+sol_sum(valor));
         }
 
     }
